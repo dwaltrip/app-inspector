@@ -1,6 +1,6 @@
 {
   "name": "app-state-inspector",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Live overlay panel for inspecting/debugging application state",
   "main": "app-state-inspector.js",
   "scripts": {
