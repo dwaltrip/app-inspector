@@ -76,10 +76,20 @@ Mount the overlay panel onto the DOM. This should be called only once, when the 
 
 *__opts__* (not required)
 
-```
-topRight: Bool | topLeft: Bool | bottomLeft: Bool | bottomRight: Bool
-  Specifies the placement of the overlay panel in the viewport. topRight is the default.
-  These are mutually exclusive. The panel can only be in one corner at a time.
+```javascript
+{
+  // Specifies the placement of the overlay panel in the viewport.
+  // These are mutually exclusive. The panel can only be in one corner at a time.
+  // default -> topRight: true
+  topLeft:      Boolean
+  topRight:     Boolean
+  bottomLeft:   Boolean
+  bottomRight:  Boolean
+
+  // Sets the overlay panel to be collapsed on page load.
+  // default -> false
+  isCollapsed:  Boolean
+}
 ```
 
 ## Run the demo

@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.ai--app-inspector .ai--debug-display.is-visible .ai--header-row {
+.ai--app-inspector .ai--debug-display.is-not-collapsed .ai--header-row {
   width: 100%;
   border-bottom: 1px solid #999;
 }
