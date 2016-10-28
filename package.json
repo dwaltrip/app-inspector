@@ -10,6 +10,7 @@
     "debug",
     "inspect",
     "development",
+    "mithril",
     "spa"
   ],
   "author": "Daniel Waltrip",

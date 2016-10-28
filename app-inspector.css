@@ -5,12 +5,30 @@
   border: 2px solid #222;
   opacity: .93;
   position: absolute;
+  font-family: Optima;
+}
+
+.ai--app-inspector div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .ai--app-inspector.is-top    { top: 0;     border-top: none; }
 .ai--app-inspector.is-bottom { bottom: 0;  border-bottom: none; }
 .ai--app-inspector.is-right  { right: 0;   border-right: none; }
 .ai--app-inspector.is-left   { left: 0;    border-left: none; }
+
+.ai--app-inspector .ai--debug-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ai--app-inspector .ai--debug-display.is-visible .ai--header-row {
+  width: 100%;
+  border-bottom: 1px solid #999;
+}
 
 .ai--app-inspector .ai--debug-display .ai--header-row {
   font-size: 15px;
@@ -53,9 +71,10 @@
 .ai--app-inspector .ai--tcell {
   display: table-cell;
   padding: 5px 7px;
-}    
+}
 
 .ai--app-inspector .ai--trow              { border-top:   1px solid #999; }
+.ai--app-inspector .ai--trow:first-child  { border-top:   none; }
 .ai--app-inspector .ai--tcell:first-child { border-right: 1px solid #999; }
 
 .ai--no-font-smoothing {
