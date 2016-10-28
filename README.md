@@ -1,16 +1,18 @@
-## App Inspector
+## App State Inspector
 
-A simple overlay panel that gives a live view into the application state. The goal is to make it quicker easier to find the problematic logic when your app isn't behaving as you expected.
+A simple overlay panel that gives a live view into the application state. The goal is to make it easier to find the problematic logic when your app isn't behaving as you expected.
 
-App Inspector was designed to work well with mithril.js apps.
+It may also be useful when building components, as it can provide lower friction visibility into the state of intermediate variables.
+
+App State Inspector was designed to work with [mithril.js](http://mithril.js.org/) apps out of the box. It should be pretty easy to make it work well with other frameworks, but this hasn't happened yet.
 
 ## Usage
 
 #### Install
 
-    > npm install --save-dev app-inspector
+    > npm install app-state-inspector --save-dev
 
-Include the file `app-inspector.css` when developing.
+Include the file `app-state-inspector.css` when developing.
 
 #### Configure
 
@@ -21,8 +23,8 @@ import App from 'app';
 
 m.mount(document.body, App);
 
-import AppInspector from 'app-inspector'
-AppInspector.mount();
+import Inspector from 'app-state-inspector'
+Inspector.mount();
 ```
 
 #### Usage
@@ -30,7 +32,7 @@ AppInspector.mount();
 ```javascript
 // app.js
 import m from 'mithril';
-import AppInspector from 'app-inspector'
+import Inspector from 'app-state-inspector'
 
 export default {
   controller: function() {
@@ -40,10 +42,10 @@ export default {
     this.decrement = function() { this.num--; }
   },
   view: function(ctrl) {
-    AppInspector.set('number', ctrl.num);
-    AppInspector.set('fizz',      ctrl.num % 3 === 0);
-    AppInspector.set('buzz',      ctrl.num % 5 === 0);
-    AppInspector.set('fizz-buzz', ctrl.num % 15 === 0);
+    Inspector.set('number', ctrl.num);
+    Inspector.set('fizz',      ctrl.num % 3 === 0);
+    Inspector.set('buzz',      ctrl.num % 5 === 0);
+    Inspector.set('fizz-buzz', ctrl.num % 15 === 0);
 
     return m('div', [
       m('h1', 'Fizz Buzz'),
@@ -58,19 +60,19 @@ export default {
 
 ## Documentation
 
-### AppInspector.set(key, value)
+### Inspector.set(key, value)
 
 Add (or replace) a row in the overlay panel. `key` must be a unique string. This method will overwrite any previous value stored at the same `key`.
 
-### AppInspector.delete(key)
+### Inspector.delete(key)
 
 Remove a row from the overlay panel.
 
-### AppInspector.clear()
+### Inspector.clear()
 
 Clear all rows.
 
-### AppInspector.mount([opts])
+### Inspector.mount([opts])
 
 Mount the overlay panel onto the DOM. This should be called only once, when the application loads.
 
@@ -94,7 +96,7 @@ Mount the overlay panel onto the DOM. This should be called only once, when the 
 
 ## Run the demo
 
-    > cd node_modules/app-inspector
+    > cd node_modules/app-state-inspector
     > npm install
     > npm run build:demo
 

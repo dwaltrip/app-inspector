@@ -1,8 +1,8 @@
 {
-  "name": "app-inspector",
+  "name": "app-state-inspector",
   "version": "0.1.0",
   "description": "Live overlay panel for inspecting/debugging application state",
-  "main": "app-inspector.js",
+  "main": "app-state-inspector.js",
   "scripts": {
     "prebuild:demo": "shx mkdir -p demo/dist",
     "build:demo": "browserify demo/app.js -o demo/dist/app.js",
