@@ -4,6 +4,8 @@
   "description": "Live overlay panel for inspecting/debugging application state",
   "main": "app-inspector.js",
   "scripts": {
+    "prebuild:demo": "shx mkdir -p demo/dist",
+    "build:demo": "browserify demo/app.js -o demo/dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,7 +18,8 @@
   "author": "Daniel Waltrip",
   "license": "ISC",
   "devDependencies": {
-    "browserify": "^13.1.1"
+    "browserify": "^13.1.1",
+    "shx": "^0.1.4"
   },
   "dependencies": {
     "mithril": "^0.2.5"
