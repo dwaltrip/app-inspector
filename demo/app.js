@@ -10,9 +10,9 @@ var App = {
   },
   view: function(ctrl) {
     Inspector.set('number', ctrl.num);
-    Inspector.set('fizz', ctrl.num % 3 === 0);
-    Inspector.set('buzz', ctrl.num % 5 === 0);
-    Inspector.set('fizz-buzz', ctrl.num % 15 === 0);
+    Inspector.set('fizz',       ctrl.num % 3 === 0,   fizzBuzzView);
+    Inspector.set('buzz',       ctrl.num % 5 === 0,   fizzBuzzView);
+    Inspector.set('fizz-buzz',  ctrl.num % 15 === 0,  fizzBuzzView);
 
     return m('.demo-app', [
       m('h1', 'Fizz Buzz'),
@@ -23,6 +23,11 @@ var App = {
     ]);
   }
 };
+
+function fizzBuzzView(val) {
+  var cssClass = val ? '.green-text' : '.red-text';
+  return m('span' + cssClass, val);
+}
 
 m.mount(document.body, App);
 Inspector.mount();

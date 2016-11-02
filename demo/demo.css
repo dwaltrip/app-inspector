@@ -38,3 +38,6 @@ body {
 .demo-app .button-row .btn:active {
   background-color: #bbb;
 }
+
+.red-text   { color: #ff3b3b; }
+.green-text { color: #00ff53; }
